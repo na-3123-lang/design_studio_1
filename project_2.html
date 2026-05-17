@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>КВ. ЖК ЛЬВОВСКАЯ</title>
+
+<style>
+@font-face {
+  font-family: 'TTSupermolotExpBold';
+  src: url('fonts/TTSupermolot-ExpBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTSupermolotCondRegular';
+  src: url('fonts/TTSupermolot-CondRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTSupermolotExpMad';
+  src: url('fonts/TTSupermolot-ExpMad.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTSupermolotNeueExpLight';
+  src: url('fonts/TTSupermolotNeue-ExpLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  background: #f2f2f2;
+  color: #111;
+}
+
+p,
+a,
+input,
+button,
+div {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+}
+
+/* заголовок проекта и логотип */
+h1,
+.project-title,
+.header-inner .logo {
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+}
+
+.contact-inner {
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f2f2f2;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+  background: white;
+  border-bottom: 2px solid #2f6fe4;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.header-left a {
+  margin-right: 20px;
+}
+
+.header-left a:first-child {
+  margin-left: 0;
+}
+
+.header-right a {
+  margin-left: 20px;
+}
+
+.header-right a:last-child {
+  margin-right: 0;
+}
+
+.logo {
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px 0 80px;
+  box-sizing: border-box;
+  background: white;
+  overflow: hidden;
+}
+
+/* TITLE */
+.project-heading {
+  text-align: center;
+  padding: 70px 20px 60px;
+  box-sizing: border-box;
+}
+
+.project-title {
+  margin: 0;
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+  font-style: normal;
+  font-size: 92px;
+  line-height: 0.9;
+  letter-spacing: -3px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.project-subtitle {
+  margin: 0 0 28px;
+  font-family: 'TTSupermolotNeueExpLight', Arial, sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  color: black;
+}
+
+/* GALLERY */
+img {
+  width: 100%;
+  display: block;
+}
+
+.row {
+  display: grid;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.one {
+  grid-template-columns: 1fr;
+}
+
+.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.three {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.three img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.mix {
+  grid-template-columns: 2fr 1fr;
+}
+
+.two img {
+  height: 600px;
+  object-fit: cover;
+}
+
+.mix img {
+  height: 420px;
+  object-fit: cover;
+}
+
+/* CONTACT */
+.contact {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1478f2;
+  color: white;
+  box-sizing: border-box;
+}
+
+.contact-inner {
+  padding: 80px 90px;
+  font-size: 60px;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+/* ADAPTIVE */
+@media (max-width: 900px) {
+  .header-inner {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .container {
+    padding: 20px 0 60px;
+  }
+
+.project-heading {
+  padding: 60px 20px 50px;
+}
+
+.project-title {
+  font-size: 56px;
+  letter-spacing: -2px;
+  white-space: nowrap;
+}
+
+.project-subtitle {
+  margin-bottom: 22px;
+  font-size: 16px;
+}
+
+  .two,
+  .three,
+  .mix {
+    grid-template-columns: 1fr;
+  }
+
+  .two img,
+  .three img,
+  .mix img {
+    height: auto;
+  }
+
+  .contact {
+    max-width: 100%;
+  }
+
+  .contact-inner {
+    padding: 80px 20px;
+    font-size: 38px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="portfolio.html">Проекты</a>
+      <a href="service.html">Услуги</a>
+    </div>
+
+    <div>
+      <a href="main.html" class="logo">NARO.DESIGN</a>
+    </div>
+
+    <div class="header-right">
+      <a href="main.html#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- WHITE BLOCK -->
+<div class="container">
+
+ <div class="project-heading">
+  <p class="project-subtitle">КВАРТИРА ЖК</p>
+  <h1 class="project-title">"ЛЬВОВСКАЯ"</h1>
+</div>
+
+  <div class="row one">
+    <img src="images/28.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/29.jpg" alt="">
+  </div>
+
+  <div class="row three">
+    <img src="images/30.jpg" alt="">
+    <img src="images/31.jpg" alt="">
+    <img src="images/32.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/33.jpg" alt="">
+  </div>
+
+  <div class="row three">
+    <img src="images/34.jpg" alt="">
+    <img src="images/35.jpg" alt="">
+    <img src="images/36.jpg" alt="">
+  </div>
+
+  <div class="row mix">
+    <img src="images/37.jpg" alt="">
+    <img src="images/38.jpg" alt="">
+  </div>
+
+  <div class="row two">
+    <img src="images/39.jpg" alt="">
+    <img src="images/40.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/41.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/42.jpg" alt="">
+  </div>
+
+  <div class="row three">
+    <img src="images/43.jpg" alt="">
+    <img src="images/44.jpg" alt="">
+    <img src="images/45.jpg" alt="">
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contacts">
+  <div class="contact-inner">
+    TELEGRAM<br>
+    WHATSAPP<br>
+    +7 (900) 000-00-00
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Портфолио</title>
+
+  <style>
+    @font-face {
+      font-family: 'TTSupermolotExpBold';
+      src: url('fonts/TTSupermolot-ExpBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'TTSupermolotCondRegular';
+      src: url('fonts/TTSupermolot-CondRegular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'TTSupermolotExpMad';
+      src: url('fonts/TTSupermolot-ExpMad.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'TTSupermolotNeueExpLight';
+      src: url('fonts/TTSupermolotNeue-ExpLight.woff2') format('woff2');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --container-max: 900px;
+      --container-x: 90px;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 80px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+      background: #f2f2f2;
+      color: #111;
+    }
+
+    p,
+    a,
+    input,
+    button,
+    div {
+      font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+    }
+
+    .logo,
+    .title h1,
+    .reviews h2,
+    .item-title {
+      font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+      font-weight: 800;
+    }
+
+    .title p,
+    .card p,
+    .card small {
+      font-family: 'TTSupermolotNeueExpLight', Arial, sans-serif;
+      font-weight: 200;
+    }
+
+    .card strong {
+      font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+      font-weight: 400;
+    }
+
+    .contact-inner {
+      font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+      font-weight: 500;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #f2f2f2;
+    }
+
+    .header-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-3);
+      box-sizing: border-box;
+      background: white;
+      border-bottom: 2px solid #2f6fe4;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      text-decoration: none;
+      color: black;
+      margin: 0 10px;
+      font-size: 14px;
+    }
+
+    .header-inner div:first-child a:first-child {
+      margin-left: 0;
+    }
+
+    .logo {
+      font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+      font-weight: 800;
+      font-style: normal;
+      letter-spacing: 0;
+    }
+
+    /* WHITE BLOCK */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-5) var(--container-x) var(--space-6);
+      box-sizing: border-box;
+      background: white;
+      overflow: hidden;
+    }
+
+    /* TITLE */
+    .title {
+      text-align: center;
+      margin-bottom: var(--space-6);
+    }
+
+    .title h1 {
+      font-size: 52px;
+      line-height: 0.95;
+      margin: 0 0 10px;
+      letter-spacing: -2px;
+    }
+
+    .title p {
+      margin: 0;
+      color: gray;
+      font-size: 14px;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    /* GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: var(--space-2);
+      row-gap: var(--space-6);
+    }
+
+    .item {
+      position: relative;
+      overflow: hidden;
+      display: block;
+      text-decoration: none;
+      color: black;
+      transition: border-radius 0.3s ease;
+    }
+
+    .item img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.35s ease, filter 0.35s ease, border-radius 0.35s ease;
+    }
+
+    .item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0);
+      transition: background 0.35s ease;
+      pointer-events: none;
+    }
+
+    .item-title {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 18px;
+      z-index: 2;
+
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 1.15;
+      text-transform: uppercase;
+
+      opacity: 0;
+      transition: opacity 0.35s ease, color 0.25s ease;
+    }
+
+    .item:hover {
+      border-radius: 28px;
+    }
+
+    .item:hover img {
+      border-radius: 28px;
+      filter: brightness(55%);
+      transform: scale(1.03);
+    }
+
+    .item:hover::after {
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 28px;
+    }
+
+    .item:hover .item-title {
+      opacity: 1;
+    }
+
+    .item-title:hover {
+      color: #2f6fe4;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      text-align: center;
+      margin-top: 90px;
+    }
+
+    .reviews h2 {
+      margin: 0 0 30px;
+      font-size: 36px;
+      line-height: 1;
+    }
+
+    .reviews-wrapper {
+      width: calc(100% + 180px);
+      margin-left: -90px;
+      overflow: hidden;
+    }
+
+    .review-cards {
+      display: flex;
+      gap: 30px;
+      transition: transform 0.45s ease;
+      will-change: transform;
+      cursor: grab;
+    }
+
+    .card {
+      min-width: 360px;
+      height: 180px;
+      flex: 0 0 360px;
+      border: 1px solid black;
+      border-radius: 20px;
+      padding: 20px;
+      background: transparent;
+      text-align: left;
+      box-sizing: border-box;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #2f6fe4;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .card small {
+      color: gray;
+      font-size: 12px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.25;
+    }
+
+    /* DOTS */
+    .review-dots {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      border: none;
+      border-radius: 50%;
+      background: #2f6fe4;
+      opacity: 0.35;
+      cursor: pointer;
+    }
+
+    .dot.active {
+      opacity: 1;
+    }
+
+    /* CONTACT */
+    .contact {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #1478f2;
+      color: white;
+      box-sizing: border-box;
+    }
+
+    .contact-inner {
+      padding: 80px 90px;
+      font-size: 60px;
+      line-height: 1.2;
+      box-sizing: border-box;
+    }
+
+    /* ADAPTIVE */
+    @media (max-width: 900px) {
+      .header-inner {
+        max-width: 100%;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 40px 20px 60px;
+      }
+
+      .title h1 {
+        font-size: 40px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+      }
+
+      .reviews-wrapper {
+        width: 100%;
+        margin-left: 0;
+      }
+
+      .card {
+        min-width: 280px;
+        flex: 0 0 280px;
+      }
+
+      .contact {
+        max-width: 100%;
+      }
+
+      .contact-inner {
+        padding: 80px 20px;
+        font-size: 38px;
+      }
+    }
+
+/* ===== CENTER REVIEW TEXT ===== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  margin-bottom: 0;
+}
+
+.card p {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 0;
+  text-align: center;
+  line-height: 1.25;
+}
+
+/* ===== FIX REVIEW CARD HOVER BORDER ===== */
+
+/* даём место сверху, чтобы карточка не обрезалась при подъёме */
+.reviews-wrapper {
+  padding-top: 10px;
+  margin-top: -10px;
+}
+
+/* рамка всегда остаётся видимой */
+.card {
+  border: 1px solid black;
+  overflow: visible;
+}
+
+/* при наведении карточка поднимается, но верхняя линия больше не пропадает */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+
+    <div>
+      <a href="portfolio.html">Проекты</a>
+      <a href="service.html">Услуги</a>
+    </div>
+
+    <div>
+      <a href="main.html" class="logo">NARO.DESIGN</a>
+    </div>
+
+    <div>
+      <a href="main.html#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- WHITE BLOCK -->
+<div class="container">
+
+  <!-- TITLE -->
+  <div class="title">
+    <h1>ПОРТФОЛИО</h1>
+    <p>КВАРТИРЫ | КОММЕРЧЕСКИЕ ПОМЕЩЕНИЯ | ЗАГОРОДНЫЕ ДОМА</p>
+  </div>
+
+  <!-- GRID -->
+  <div class="grid">
+
+    <a href="project_3.html" class="item">
+      <img src="images/7.jpg" alt="">
+      <span class="item-title">
+        КВ. ЖК<br>
+        "СИМВОЛ", Г. МОСКВА
+      </span>
+    </a>
+
+    <a href="project_4.html" class="item">
+  <img src="images/69.jpg" alt="">
+  <span class="item-title">
+    SIRENA.COFE
+  </span>
+</a>
+
+    <a href="project_1.html" class="item">
+      <img src="images/9.jpg" alt="">
+      <span class="item-title">
+        SPAZIO 21.RETAIL
+      </span>
+    </a>
+
+    <a href="project_2.html" class="item">
+      <img src="images/10.jpg" alt="">
+      <span class="item-title">
+        КВ. ЖК<br>
+        "ЛЬВОВСКАЯ", Г. СПБ
+      </span>
+    </a>
+
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="reviews">
+    <h2>ОТЗЫВЫ</h2>
+
+    <div class="reviews-wrapper">
+      <div class="review-cards" id="reviewsCarousel">
+
+        <!-- КОПИЯ ПОСЛЕДНЕГО -->
+        <div class="card clone">
+          <div class="card-header">
+            <div class="avatar">ЕЛ</div>
+            <div>
+              <strong>Елена Л.</strong><br>
+              <small>3 февраля 2026</small>
+            </div>
+          </div>
+          <p>Хорошая команда, быстро отвечали и помогли подобрать материалы.</p>
+        </div>
+
+        <!-- 1 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="avatar">АН</div>
+            <div>
+              <strong>Арина Н.</strong><br>
+              <small>6 августа 2025</small>
+            </div>
+          </div>
+          <p>Первый опыт с дизайнером удачный. Помогли реализовать идеи.</p>
+        </div>
+
+        <!-- 2 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="avatar">ВТ</div>
+            <div>
+              <strong>Владислав Т.</strong><br>
+              <small>24 ноября 2025</small>
+            </div>
+          </div>
+          <p>Спасибо за поддержку на всех этапах. Всё сделали в срок.</p>
+        </div>
+
+        <!-- 3 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="avatar">МК</div>
+            <div>
+              <strong>Мария К.</strong><br>
+              <small>12 декабря 2025</small>
+            </div>
+          </div>
+          <p>Получился очень красивый проект. Особенно понравилась визуализация.</p>
+        </div>
+
+        <!-- 4 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="avatar">ИС</div>
+            <div>
+              <strong>Илья С.</strong><br>
+              <small>18 января 2026</small>
+            </div>
+          </div>
+          <p>Понравилось, что всё было понятно по этапам и без лишней суеты.</p>
+        </div>
+
+        <!-- 5 -->
+        <div class="card">
+          <div class="card-header">
+            <div class="avatar">ЕЛ</div>
+            <div>
+              <strong>Елена Л.</strong><br>
+              <small>3 февраля 2026</small>
+            </div>
+          </div>
+          <p>Хорошая команда, быстро отвечали и помогли подобрать материалы.</p>
+        </div>
+
+        <!-- КОПИЯ ПЕРВОГО -->
+        <div class="card clone">
+          <div class="card-header">
+            <div class="avatar">АН</div>
+            <div>
+              <strong>Арина Н.</strong><br>
+              <small>6 августа 2025</small>
+            </div>
+          </div>
+          <p>Первый опыт с дизайнером удачный. Помогли реализовать идеи.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="review-dots">
+      <button class="dot active" data-slide="1" type="button"></button>
+      <button class="dot" data-slide="2" type="button"></button>
+      <button class="dot" data-slide="3" type="button"></button>
+      <button class="dot" data-slide="4" type="button"></button>
+      <button class="dot" data-slide="5" type="button"></button>
+    </div>
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contacts">
+  <div class="contact-inner">
+    TELEGRAM<br>
+    WHATSAPP<br>
+    +7 (900) 000-00-00
+  </div>
+</div>
+
+<script>
+  const carousel = document.getElementById('reviewsCarousel');
+  const dots = document.querySelectorAll('.dot');
+  const cards = document.querySelectorAll('.card');
+  const wrapper = document.querySelector('.reviews-wrapper');
+
+  let currentSlide = 1;
+  let isMoving = false;
+
+  function getStep() {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 30;
+    return cardWidth + gap;
+  }
+
+  function moveCarousel(withAnimation = true) {
+    const cardWidth = cards[0].offsetWidth;
+    const step = getStep();
+    const wrapperWidth = wrapper.offsetWidth;
+
+    const centerOffset = wrapperWidth / 2 - cardWidth / 2;
+    const move = centerOffset - currentSlide * step;
+
+    carousel.style.transition = withAnimation ? 'transform 0.45s ease' : 'none';
+    carousel.style.transform = `translateX(${move}px)`;
+
+    dots.forEach(dot => dot.classList.remove('active'));
+
+    let activeDot = currentSlide - 1;
+
+    if (currentSlide === 0) {
+      activeDot = 4;
+    }
+
+    if (currentSlide === 6) {
+      activeDot = 0;
+    }
+
+    dots[activeDot].classList.add('active');
+  }
+
+  function nextSlide() {
+    if (isMoving) return;
+
+    isMoving = true;
+    currentSlide++;
+    moveCarousel(true);
+  }
+
+  function prevSlide() {
+    if (isMoving) return;
+
+    isMoving = true;
+    currentSlide--;
+    moveCarousel(true);
+  }
+
+  carousel.addEventListener('transitionend', function() {
+    if (currentSlide === 6) {
+      currentSlide = 1;
+      moveCarousel(false);
+    }
+
+    if (currentSlide === 0) {
+      currentSlide = 5;
+      moveCarousel(false);
+    }
+
+    isMoving = false;
+  });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', function() {
+      if (isMoving) return;
+
+      currentSlide = Number(this.dataset.slide);
+      moveCarousel(true);
+    });
+  });
+
+  carousel.addEventListener('wheel', function(event) {
+    event.preventDefault();
+
+    if (event.deltaY > 0) {
+      nextSlide();
+    } else {
+      prevSlide();
+    }
+  }, { passive: false });
+
+  window.addEventListener('resize', function() {
+    moveCarousel(false);
+  });
+
+  moveCarousel(false);
+</script>
+
+</body>
+</html>

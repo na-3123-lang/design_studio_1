@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>NARO.DESIGN</title>
+
+<style>
+
+@font-face {
+  font-family: 'TTSupermolotExpBold';
+  src: url('fonts/TTSupermolot-ExpBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTSupermolotCondRegular';
+  src: url('fonts/TTSupermolot-CondRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTSupermolotExpMad';
+  src: url('fonts/TTSupermolot-ExpMad.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'TTSupermolotNeueCondXLight';
+  src: url('fonts/TTSupermolotNeue-ExpLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --container-max: 900px;
+  --container-x: 90px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 80px;
+}
+
+/* основной шрифт для всего сайта */
+body {
+  margin: 0;
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  background: #f2f2f2;
+  color: #111;
+}
+
+/* название студии NARO.DESIGN */
+.hero h1,
+.logo {
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+}
+
+/* синие заголовки пунктов */
+.section-title h2,
+.section-title span {
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+}
+
+/* основной текст */
+p,
+a,
+input,
+button,
+div {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+}
+
+/* кнопки */
+.btn,
+.send-btn {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* заголовок в 01 */
+.about-copy h3 {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* заголовки в 03 */
+.steps h3 {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* строки услуг в 04 */
+.service-header {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* второстепенный тонкий текст: 01, 03, 04, 06 */
+.about-copy p,
+.steps p,
+.service-content p,
+.form-left p {
+  font-family: 'TTSupermolotNeueExpLight', Arial, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+/* текст в синем блоке */
+.contact-inner {
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-weight: 500;
+}
+
+
+/* HEADER */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #f2f2f2;
+}
+
+.header-inner {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-3);
+  box-sizing: border-box;
+  background: white;
+  border-bottom: 2px solid #2f6fe4;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.header-left a {
+  margin-right: 20px;
+}
+
+.header-right a {
+  margin-left: 20px;
+}
+
+.logo {
+  font-weight: bold;
+}
+
+/* CONTAINER */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: var(--space-3) var(--container-x) 0;
+  box-sizing: border-box;
+  background: white;
+  overflow: hidden;
+}
+
+/* HERO */
+.hero h1 {
+  width: calc(100% + 180px);
+  margin: var(--space-7) calc(var(--container-x) * -1) var(--space-7);
+  font-size: 116px;
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+.hero img {
+  width: calc(100% + 180px);
+  max-width: none;
+  display: block;
+  margin-left: calc(var(--container-x) * -1);
+  margin-right: calc(var(--container-x) * -1);
+  margin-bottom: var(--space-7);
+}
+
+/* SECTION TITLE */
+.section-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: var(--space-7);
+  border-bottom: 2px solid #2f6fe4;
+  padding-bottom: 0;
+}
+
+.section-title h2,
+.section-title span {
+  margin-bottom: -6px;
+}
+
+.guarantee-title h2,
+.questions-title h2,
+.guarantee-title span,
+.questions-title span {
+  margin-bottom: 0;
+}
+
+.section-title h2 {
+  color: #1478f2;
+  font-size: 52px;
+  line-height: 0.95;
+  margin: 0;
+  font-weight: 800;
+}
+
+.section-title span {
+  color: #aaa;
+  font-size: 48px;
+  font-weight: 800;
+}
+
+/* SPECIAL TITLES */
+.guarantee-title,
+.questions-title {
+  position: relative;
+  border-bottom: none;
+  align-items: flex-start;
+}
+
+.guarantee-title > div,
+.questions-title > div {
+  width: 100%;
+}
+
+.guarantee-title h2,
+.questions-title h2 {
+  margin: 0;
+}
+
+.guarantee-title span,
+.questions-title span {
+  align-self: flex-start;
+  margin-top: 0;
+}
+
+.guarantee-line,
+.questions-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 62px;
+  width: 100%;
+  height: 2px;
+  background: #2f6fe4;
+  margin: 0;
+}
+
+.guarantee-line + h2,
+.questions-line + h2 {
+  margin-top: 23px;
+}
+
+/* ABOUT */
+.about-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  justify-content: space-between;
+  align-items: start;
+  margin: 12px 0 55px;
+  color: #1478f2;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-number {
+  font-size: 58px;
+  line-height: 0.9;
+  font-weight: 800;
+  letter-spacing: 14px;
+}
+
+.stat-plus {
+  font-size: 58px;
+  line-height: 0.9;
+  font-weight: 800;
+}
+
+.stat-text {
+  margin-top: 6px;
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1;
+  color: black;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.about-stats .stat:last-child {
+  text-align: right;
+}
+
+.about-text {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 25px;
+  align-items: start;
+  margin-top: 30px;
+}
+
+.about-text img {
+  width: 100%;
+  display: block;
+}
+
+.about-copy h3 {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.about-copy p {
+  margin: 50px 0 0;
+  font-size: 18px;
+  line-height: 1.35;
+  text-align: justify;
+  text-align-last: left;
+  max-width: 100%;
+}
+
+/* PROJECTS CAROUSEL */
+.projects {
+  margin-top: 70px;
+}
+
+.projects-wrapper {
+  width: calc(100% + 180px);
+  margin-left: -90px;
+  overflow: hidden;
+}
+
+.projects-carousel {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.45s ease;
+  will-change: transform;
+  cursor: grab;
+}
+
+.project-slide {
+  min-width: 260px;
+  height: 380px;
+  flex: 0 0 260px;
+  border-radius: 28px;
+  overflow: hidden;
+  display: block;
+  text-decoration: none;
+}
+
+.project-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* PROJECT DOTS */
+.project-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.project-dot {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #2f6fe4;
+  opacity: 0.35;
+  cursor: pointer;
+}
+
+.project-dot.active {
+  opacity: 1;
+}
+
+/* BUTTON */
+.btn {
+  display: block;
+  width: 220px;
+  margin: 80px auto;
+  padding: 10px 30px;
+  border: 2px solid #1478f2;
+  border-radius: 30px;
+  background: transparent;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/* STEPS */
+.steps {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.steps h3 {
+  font-size: 34px;
+  font-weight: 400;
+  margin: 70px 0 10px;
+}
+
+.steps p {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 17px;
+  line-height: 1.25;
+}
+
+/* SERVICES */
+.services-list {
+  margin-top: 60px;
+}
+
+.service-item {
+  border-bottom: 2px solid #2f6fe4;
+}
+
+.service-item:last-child {
+  border-bottom: none;
+}
+
+.service-header {
+  width: 100%;
+  padding: 22px 0;
+  border: none;
+  background: white;
+  color: black;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.1;
+  text-align: left;
+  transition: background 0.25s ease, color 0.25s ease, padding 0.25s ease;
+}
+
+.service-header:hover {
+  background: #1478f2;
+  color: white;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.service-item.active .service-header {
+  background: white;
+  color: black;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.service-icon {
+  font-size: 36px;
+  line-height: 1;
+  font-weight: 300;
+  flex-shrink: 0;
+  margin-left: 20px;
+}
+
+.service-content {
+  max-height: 0;
+  overflow: hidden;
+  background: white;
+  transition: max-height 0.35s ease;
+}
+
+.service-content p {
+  margin: 0;
+  padding: 0 0 26px;
+  font-size: 16px;
+  line-height: 1.35;
+  color: black;
+  text-align: left;
+}
+
+.service-item.active .service-content {
+  max-height: 500px;
+}
+
+/* GUARANTEE */
+.guarantee {
+  text-align: center;
+  margin: 80px 0 120px;
+}
+
+.guarantee h3 {
+  font-size: 34px;
+  font-weight: 400;
+  margin: 10px 0;
+}
+
+/* FORM */
+.form-block {
+  margin-top: 70px;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.form-left p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.form-right {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.form-right input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 4px 0;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.form-right input:last-child {
+  border-bottom: none;
+}
+
+.form-right input::placeholder {
+  color: #777;
+}
+
+.send-btn {
+  display: block;
+  width: 220px;
+  margin: 70px auto 90px;
+  padding: 10px 30px;
+  border: 2px solid #1478f2;
+  border-radius: 30px;
+  background: transparent;
+  color: #777;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* FOOTER IMAGE */
+.full-img {
+  width: calc(100% + 180px);
+  max-width: none;
+  display: block;
+  margin-left: -90px;
+  margin-right: -90px;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+/* CONTACT */
+.contact {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #1478f2;
+  color: white;
+  box-sizing: border-box;
+}
+
+.contact-inner {
+  padding: 80px 90px;
+  font-size: 60px;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+/* ADAPTIVE */
+@media (max-width: 900px) {
+  .header-inner {
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .container {
+    padding: 20px 20px 0;
+  }
+
+  .hero h1 {
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  font-size: 64px;
+  letter-spacing: 0;
+}
+
+  .hero img,
+  .full-img {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .section-title h2 {
+    font-size: 38px;
+  }
+
+  .section-title span {
+    font-size: 38px;
+  }
+
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-text {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-wrapper {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+  }
+
+  .project-slide {
+    min-width: 260px;
+    flex: 0 0 260px;
+  }
+
+  .service-header {
+    font-size: 24px;
+  }
+
+  .service-content p {
+    font-size: 14px;
+  }
+
+  .form-block {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    max-width: 100%;
+  }
+
+  .contact-inner {
+    padding: 80px 20px;
+    font-size: 38px;
+  }
+}
+
+/* ===== FINAL FIXES ===== */
+
+/* исправляем имя тонкого шрифта */
+@font-face {
+  font-family: 'TTSupermolotNeueExpLight';
+  src: url('fonts/TTSupermolotNeue-ExpLight.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* NARO.DESIGN по ширине первой картинки, без левого визуального отступа */
+.hero h1 {
+  width: calc(100% + 190px);
+  margin: 80px -95px 80px;
+  font-size: 116px;
+  line-height: 0.9;
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}
+
+/* 01, 02, 03, 04 — заголовок и цифра на одном уровне */
+.section-title:not(.guarantee-title):not(.questions-title) {
+  align-items: flex-end;
+}
+
+.section-title:not(.guarantee-title):not(.questions-title) h2,
+.section-title:not(.guarantee-title):not(.questions-title) span {
+  line-height: 0.95;
+  margin-bottom: -6px;
+  transform: translateY(0);
+}
+
+/* если цифра всё ещё на 1–2px выше/ниже — меняй только это значение */
+.section-title:not(.guarantee-title):not(.questions-title) span {
+  position: relative;
+  top: 0;
+}
+
+/* второстепенный текст: 01, 03, 04, 06 — один размер и один шрифт */
+.about-copy p,
+.steps p,
+.service-content p,
+.form-left p {
+  font-family: 'TTSupermolotNeueExpLight', Arial, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+/* 01 — абзац ровно по краям */
+.about-copy p {
+  text-align: justify;
+  text-align-last: left;
+}
+
+/* 04 — текст при раскрытии тоже ровно по краям */
+.service-content p {
+  text-align: justify;
+  text-align-last: left;
+}
+
+/* 04 — сами строки услуг остаются обычным основным шрифтом */
+.service-header {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* телефон */
+@media (max-width: 900px) {
+  .hero h1 {
+    width: calc(100% + 46px);
+    margin-left: -23px;
+    margin-right: -23px;
+    font-size: 64px;
+    letter-spacing: 0;
+  }
+
+  .about-copy p,
+  .steps p,
+  .service-content p,
+  .form-left p {
+    font-size: 16px;
+    line-height: 1.35;
+  }
+}
+
+/* ===== FIX SECTION TITLES 01-04 ===== */
+
+/* обычные заголовки 01, 02, 03, 04 */
+.section-title:not(.guarantee-title):not(.questions-title) {
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+/* текст заголовка и цифра на одном уровне */
+.section-title:not(.guarantee-title):not(.questions-title) h2,
+.section-title:not(.guarantee-title):not(.questions-title) span {
+  margin-bottom: 0;
+  line-height: 0.95;
+  transform: none;
+  position: static;
+}
+
+/* точная подгонка цифр 01-04 */
+.section-title:not(.guarantee-title):not(.questions-title) span {
+  position: relative;
+  top: 1px;
+}
+
+/* ===== FIX HEADER LOGO / STATS / FORM ===== */
+
+/* NARO.DESIGN в шапке — такая же жирность, как на остальных страницах */
+.header-inner .logo {
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif !important;
+  font-weight: 800 !important;
+  font-style: normal;
+  letter-spacing: 0;
+}
+
+/* подписи в 01: авторских проектов / опыт работы — тоньше */
+.stat-text {
+  font-family: 'TTSupermolotNeueExpLight', Arial, sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1;
+  color: black;
+  letter-spacing: 0;
+}
+
+/* поля формы */
+.form-right input {
+  font-family: 'TTSupermolotNeueExpLight', Arial, sans-serif;
+  font-weight: 200;
+}
+
+/* подписи в 01: авторских проектов / опыт работы */
+.stat-text {
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* пункт 06: текст "Заполните форму заявки..." */
+.form-left p {
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* ===== FINAL MAIN EDITS ===== */
+
+/* пункт 01: 300 + 12 + ЛЕТ сделать чёрными */
+.about-stats,
+.stat-number,
+.stat-plus {
+  color: black;
+}
+
+/* пункт 03: все главные слова этапов заглавными */
+.steps h3 {
+  text-transform: uppercase;
+}
+
+/* пункты 05 и 06: заголовки в одну строку */
+.guarantee-title,
+.questions-title {
+  border-bottom: 2px solid #2f6fe4;
+  align-items: flex-end;
+  padding-bottom: 8px;
+}
+
+.guarantee-title > div,
+.questions-title > div {
+  width: auto;
+}
+
+.guarantee-title h2,
+.questions-title h2 {
+  display: inline;
+  margin: 0;
+  line-height: 0.95;
+}
+
+.guarantee-line,
+.questions-line {
+  display: none;
+}
+
+.guarantee-title span,
+.questions-title span {
+  align-self: flex-end;
+  margin-bottom: 0;
+  position: relative;
+  top: 1px;
+}
+
+/* небольшой пробел между словами */
+.guarantee-title h2:first-child::after,
+.questions-title h2:first-child::after {
+  content: " ";
+}
+
+/* пункт 06: ОСТАЛИСЬ ВОПРОСЫ? в одну строку */
+.questions-title > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  white-space: nowrap;
+}
+
+.questions-title h2 {
+  display: inline-block;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* пункт 01: цифры 300 + 12 + ЛЕТ */
+.stat-number,
+.stat-plus {
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-weight: 500;
+  color: black;
+}
+
+/* пункт 01: "Интерьеры как на Pinterest..." */
+.about-copy h3 {
+  font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+  font-weight: 500;
+}
+
+/* ===== HEADER LOGO CENTER + 05/06 ALIGN FIX ===== */
+
+/* NARO.DESIGN в шапке строго по центру */
+.header-inner {
+  position: relative;
+}
+
+.header-inner > div:nth-child(2) {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-inner .logo {
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif !important;
+  font-weight: 800 !important;
+  text-align: center;
+}
+
+/* пункты 05 и 06: цифры на одном уровне с названием */
+.guarantee-title,
+.questions-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  border-bottom: 2px solid #2f6fe4;
+  padding-bottom: 8px;
+}
+
+.guarantee-title > div,
+.questions-title > div {
+  display: flex;
+  align-items: flex-end;
+  gap: 12px;
+  width: auto;
+  white-space: nowrap;
+}
+
+.guarantee-title h2,
+.questions-title h2 {
+  display: inline-block;
+  margin: 0;
+  line-height: 0.95;
+}
+
+.questions-title h2 {
+  text-transform: uppercase;
+}
+
+.guarantee-title span,
+.questions-title span {
+  align-self: flex-end;
+  margin: 0;
+  line-height: 0.95;
+  position: relative;
+  top: 1px;
+}
+
+/* старые внутренние линии в 05 и 06 отключаем */
+.guarantee-line,
+.questions-line {
+  display: none;
+}
+
+/* пункт 01: статистика и заголовок описания */
+.stat-number,
+.stat-plus,
+.stat-text,
+.about-copy h3 {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+}
+
+/* 300 + 12 + ЛЕТ остаются чёрными */
+.stat-number,
+.stat-plus {
+  color: black;
+}
+
+/* ===== CENTER HERO TITLE ===== */
+
+.hero h1 {
+  width: 100%;
+  margin: 80px auto 80px;
+  padding: 0;
+  text-align: center;
+
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+  font-size: 108px;
+  line-height: 0.9;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+
+  box-sizing: border-box;
+}
+
+/* ===== STABLE CENTER HERO TITLE ===== */
+
+.hero {
+  width: calc(100% + 180px);
+  margin-left: -90px;
+  margin-right: -90px;
+  overflow: hidden;
+}
+
+.hero h1 {
+  width: 100%;
+  margin: 80px 0;
+  padding: 0 0px;
+  box-sizing: border-box;
+
+  text-align: center;
+  font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+  font-weight: 800;
+  font-size: clamp(72px, 9.7vw, 116px);
+  line-height: 0.9;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.hero img {
+  width: 100%;
+  max-width: none;
+  display: block;
+  margin: 0 0 90px 0;
+}
+
+/* телефон */
+@media (max-width: 900px) {
+  .hero {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
+
+  .hero h1 {
+    width: 100%;
+    margin: 70px 0;
+    padding: 0 14px;
+    font-size: clamp(42px, 11vw, 64px);
+    text-align: center;
+    letter-spacing: 0;
+  }
+
+  .hero img {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* ===== FIX ABOUT STATS 01 ===== */
+
+/* пункт 01: ровная сетка для 300 + 12 + ЛЕТ */
+.about-stats {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: start;
+  column-gap: 28px;
+  justify-content: normal;
+  color: black;
+}
+
+/* все цифры и плюсы */
+.stat-number,
+.stat-plus {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+  color: black;
+}
+
+/* сами блоки статистики */
+.about-stats .stat {
+  min-width: 0;
+}
+
+/* 300 и подпись под ним */
+.about-stats .stat:nth-child(1) {
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 12 по центру */
+.about-stats .stat:nth-child(3) {
+  align-items: center;
+  text-align: center;
+}
+
+/* ЛЕТ и ОПЫТ РАБОТЫ: подпись начинается от буквы Л */
+.about-stats .stat:nth-child(5) {
+  align-items: flex-start;
+  text-align: left;
+  justify-self: end;
+}
+
+/* плюсы строго по центру своих колонок */
+.stat-plus {
+  text-align: center;
+  justify-self: center;
+}
+
+/* подписи авторских проектов / опыт работы */
+.stat-text {
+  font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+  font-weight: 400;
+  color: black;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* на телефоне всё складываем аккуратно */
+@media (max-width: 900px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-stats .stat,
+  .about-stats .stat:nth-child(1),
+  .about-stats .stat:nth-child(3),
+  .about-stats .stat:nth-child(5) {
+    justify-self: start;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .stat-plus {
+    justify-self: start;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="portfolio.html">Проекты</a>
+      <a href="service.html">Услуги</a>
+    </div>
+
+    <div>
+      <a href="main.html" class="logo">NARO.DESIGN</a>
+    </div>
+
+    <div class="header-right">
+      <a href="main.html#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+
+  </div>
+</header>
+
+<div class="container">
+
+<!-- HERO -->
+<section class="hero">
+  <h1>NARO.DESIGN</h1>
+  <img src="images/1.jpg" alt="">
+</section>
+
+<!-- ABOUT -->
+<section>
+  <div class="section-title" id="about">
+    <h2>О НАС</h2>
+    <span>01</span>
+  </div>
+
+  <div class="about-stats">
+
+    <div class="stat">
+      <div class="stat-number">300</div>
+      <div class="stat-text">АВТОРСКИХ ПРОЕКТОВ</div>
+    </div>
+
+    <div class="stat-plus">+</div>
+
+    <div class="stat">
+      <div class="stat-number">12</div>
+    </div>
+
+    <div class="stat-plus">+</div>
+
+    <div class="stat">
+      <div class="stat-number">ЛЕТ</div>
+      <div class="stat-text">ОПЫТ РАБОТЫ</div>
+    </div>
+
+  </div>
+
+  <div class="about-text">
+    <img src="images/2.jpg" alt="">
+
+    <div class="about-copy">
+      <h3>Интерьеры “как на Pinterest”, но лучше — под вас.</h3>
+      <p>
+        Создаём стильные и удобные пространства без хаоса в ремонте.
+        Понятный процесс, внимание к деталям и результат, который совпадает с ожиданиями.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section>
+  <div class="section-title">
+    <h2>ПРОЕКТЫ</h2>
+    <span>02</span>
+  </div>
+
+  <div class="projects">
+    <div class="projects-wrapper">
+      <div class="projects-carousel" id="projectsCarousel">
+
+        <a href="portfolio.html" class="project-slide clone">
+          <img src="images/2.1.jpg" alt="">
+        </a>
+
+        <a href="project_3.html" class="project-slide">
+          <img src="images/4.jpg" alt="">
+        </a>
+
+        <a href="project_1.html" class="project-slide">
+          <img src="images/5.jpg" alt="">
+        </a>
+
+        <a href="project_2.html" class="project-slide">
+          <img src="images/3.jpg" alt="">
+        </a>
+
+        <a href="portfolio.html" class="project-slide">
+          <img src="images/2.2.jpg" alt="">
+        </a>
+
+        <a href="portfolio.html" class="project-slide">
+          <img src="images/2.1.jpg" alt="">
+        </a>
+
+        <a href="project_3.html" class="project-slide clone">
+          <img src="images/4.jpg" alt="">
+        </a>
+
+      </div>
+    </div>
+
+    <div class="project-dots">
+      <button class="project-dot active" data-slide="1" type="button"></button>
+      <button class="project-dot" data-slide="2" type="button"></button>
+      <button class="project-dot" data-slide="3" type="button"></button>
+      <button class="project-dot" data-slide="4" type="button"></button>
+      <button class="project-dot" data-slide="5" type="button"></button>
+    </div>
+  </div>
+
+  <a href="portfolio.html" class="btn">ПЕРЕЙТИ</a>
+</section>
+
+<!-- STEPS -->
+<section>
+  <div class="section-title">
+    <h2>ЭТАПЫ РАБОТЫ</h2>
+    <span>03</span>
+  </div>
+
+  <div class="steps">
+    <h3>ЗНАКОМСТВО</h3>
+    <p>Первая и последующие встречи, как правило, проходят в офисе. Познакомились, обсудили проект в общих чертах и составили план действий.</p>
+
+    <h3>Обмер объекта</h3>
+    <p>Обмеры и фотофиксация помещения. Планировочное решение помещения. Подготовка технического задания.</p>
+
+    <h3>Визуализация объекта</h3>
+    <p>Детальная визуализация каждой комнаты. 3D-изображения учитывают ранее выбранные элементы интерьера и отделочные материалы.</p>
+
+    <h3>Рабочая документация</h3>
+    <p>Создание рабочей документации для проекта дизайна интерьера: полный пакет чертежей, ведомость отделки и спецификации.</p>
+
+    <h3>Ремонт и отделка</h3>
+    <p>Полный спектр работ по реализации дизайн-проекта от демонтажа до установки светильников. Черновая и чистовая отделка.</p>
+
+    <h3>Авторский надзор</h3>
+    <p>Контроль соответствия строительных работ проектному плану. Наш дизайнер и инженер регулярно посещают объект и все контролируют.</p>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div class="section-title">
+    <h2>УСЛУГИ</h2>
+    <span>04</span>
+  </div>
+
+  <div class="services-list">
+
+    <div class="service-item">
+      <button class="service-header" type="button">
+        <span>ДИЗАЙН-ПРОЕКТИРОВАНИЕ</span>
+        <span class="service-icon">+</span>
+      </button>
+
+      <div class="service-content">
+        <p>
+          Подробная строительная документация, включающая все необходимые чертежи для ремонта и строительства.
+          Внутри более 100 листов: планировка, сложные технические узлы, фотореалистичные 3D-Визуализации,
+          чертежи мебели и заказных изделий. Объединяем и адаптируем проекты всех подрядчиков в единый альбом.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <button class="service-header" type="button">
+        <span>АВТОРСКИЙ НАДЗОР</span>
+        <span class="service-icon">+</span>
+      </button>
+
+      <div class="service-content">
+        <p>
+          Полная координация ремонта: замыкаем коммуникацию со всеми подрядчиками на себе,
+          составляем сметы, предлагаем строителей, закупаем материал, контролируем этапность стройки
+          и сроки поставок всех чистовых материалов и мебели. Проверяем и принимаем работу подрядчиков
+          на всех этапах до новоселья.
+        </p>
+      </div>
+    </div>
+
+    <div class="service-item">
+      <button class="service-header" type="button">
+        <span>КОНСУЛЬТАЦИЯ</span>
+        <span class="service-icon">+</span>
+      </button>
+
+      <div class="service-content">
+        <p>
+          Помогаем с выбором объекта недвижимости на основе планировки.
+          Определяем лучше всего подходящий под ваш сценарий жизни.
+          Предлагаем решения для будущей перепланировки.
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+  <a href="service.html" class="btn">ПЕРЕЙТИ</a>
+</section>
+
+<!-- GUARANTEE -->
+<section>
+<div class="section-title guarantee-title">
+  <div>
+    <h2>МЫ</h2>
+    <h2>ГАРАНТИРУЕМ</h2>
+  </div>
+
+  <span>05</span>
+</div>
+
+  <div class="guarantee">
+    <h3>СЧАСТЬЕ</h3>
+    <h3>НАДЕЖНОСТЬ</h3>
+    <h3>ОТКРЫТОСТЬ</h3>
+  </div>
+</section>
+
+<!-- QUESTIONS -->
+<section>
+<div class="section-title questions-title">
+  <div>
+    <h2>есть</h2>
+    <h2>ВОПРОСЫ?</h2>
+  </div>
+
+  <span>06</span>
+</div>
+
+  <div class="form-block">
+
+    <div class="form-left">
+      <p>Заполните форму заявки и мы свяжемся с вами в ближайшее время</p>
+    </div>
+
+    <div class="form-right">
+  <input 
+    type="text" 
+    id="nameInput" 
+    placeholder="Имя"
+    autocomplete="off"
+  >
+
+  <input 
+    type="tel" 
+    id="phoneInput" 
+    placeholder="+7 (000) 000-00-00"
+    autocomplete="off"
+    maxlength="18"
+  >
+</div>
+
+  </div>
+
+  <button class="send-btn" type="button" id="sendBtn">ОТПРАВИТЬ</button>
+</section>
+
+<img src="images/6.jpg" class="full-img" alt="">
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contacts">
+  <div class="contact-inner">
+    TELEGRAM<br>
+    WHATSAPP<br>
+    +7 (900) 000-00-00
+  </div>
+</div>
+
+<script>
+const projectsCarousel = document.getElementById('projectsCarousel');
+const projectDots = document.querySelectorAll('.project-dot');
+const projectSlides = document.querySelectorAll('.project-slide');
+const projectsWrapper = document.querySelector('.projects-wrapper');
+
+let currentProject = 1;
+let projectMoving = false;
+
+function getProjectStep() {
+  const slideWidth = projectSlides[0].offsetWidth;
+  const gap = 30;
+  return slideWidth + gap;
+}
+
+function moveProjects(withAnimation = true) {
+  const slideWidth = projectSlides[0].offsetWidth;
+  const step = getProjectStep();
+  const wrapperWidth = projectsWrapper.offsetWidth;
+
+  const centerOffset = wrapperWidth / 2 - slideWidth / 2;
+  const move = centerOffset - currentProject * step;
+
+  projectsCarousel.style.transition = withAnimation ? 'transform 0.45s ease' : 'none';
+  projectsCarousel.style.transform = `translateX(${move}px)`;
+
+  projectDots.forEach(dot => dot.classList.remove('active'));
+
+  let activeDot = currentProject - 1;
+
+  if (currentProject === 0) {
+    activeDot = 4;
+  }
+
+  if (currentProject === 6) {
+    activeDot = 0;
+  }
+
+  projectDots[activeDot].classList.add('active');
+}
+
+function nextProject() {
+  if (projectMoving) return;
+
+  projectMoving = true;
+  currentProject++;
+  moveProjects(true);
+}
+
+function prevProject() {
+  if (projectMoving) return;
+
+  projectMoving = true;
+  currentProject--;
+  moveProjects(true);
+}
+
+projectsCarousel.addEventListener('transitionend', function() {
+  if (currentProject === 6) {
+    currentProject = 1;
+    moveProjects(false);
+  }
+
+  if (currentProject === 0) {
+    currentProject = 5;
+    moveProjects(false);
+  }
+
+  projectMoving = false;
+});
+
+projectDots.forEach(dot => {
+  dot.addEventListener('click', function() {
+    if (projectMoving) return;
+
+    currentProject = Number(this.dataset.slide);
+    moveProjects(true);
+  });
+});
+
+projectsCarousel.addEventListener('wheel', function(event) {
+  event.preventDefault();
+
+  if (event.deltaY > 0) {
+    nextProject();
+  } else {
+    prevProject();
+  }
+}, { passive: false });
+
+window.addEventListener('resize', function() {
+  moveProjects(false);
+});
+
+moveProjects(false);
+
+/* аккордеон услуг */
+const serviceItems = document.querySelectorAll('.service-item');
+
+serviceItems.forEach(item => {
+  const header = item.querySelector('.service-header');
+  const icon = item.querySelector('.service-icon');
+
+  header.addEventListener('click', function() {
+    const isActive = item.classList.contains('active');
+
+    serviceItems.forEach(otherItem => {
+      otherItem.classList.remove('active');
+      otherItem.querySelector('.service-icon').textContent = '+';
+    });
+
+    if (!isActive) {
+      item.classList.add('active');
+      icon.textContent = '−';
+    } else {
+      item.classList.remove('active');
+      icon.textContent = '+';
+    }
+  });
+});
+
+/* очистка формы после отправки */
+const sendBtn = document.getElementById('sendBtn');
+const formInputs = document.querySelectorAll('.form-right input');
+
+sendBtn.addEventListener('click', function() {
+  formInputs.forEach(input => {
+    input.value = '';
+  });
+});
+
+/* поле имени: только буквы */
+const nameInput = document.getElementById('nameInput');
+
+nameInput.addEventListener('input', function() {
+  this.value = this.value.replace(/[^А-Яа-яЁёA-Za-z\s-]/g, '');
+});
+
+/* поле телефона: автоматическая маска +7 (***) *-**- */
+const phoneInput = document.getElementById('phoneInput');
+
+phoneInput.addEventListener('input', function() {
+  let digits = this.value.replace(/\D/g, '');
+
+  if (digits.startsWith('8')) {
+    digits = '7' + digits.slice(1);
+  }
+
+  if (!digits.startsWith('7') && digits.length > 0) {
+    digits = '7' + digits;
+  }
+
+  digits = digits.slice(0, 11);
+
+  let result = '';
+
+  if (digits.length > 0) {
+    result = '+7';
+  }
+
+  if (digits.length > 1) {
+    result += ' (' + digits.slice(1, 4);
+  }
+
+  if (digits.length >= 4) {
+    result += ')';
+  }
+
+  if (digits.length > 4) {
+    result += ' ' + digits.slice(4, 7);
+  }
+
+  if (digits.length > 7) {
+    result += '-' + digits.slice(7, 9);
+  }
+
+  if (digits.length > 9) {
+    result += '-' + digits.slice(9, 11);
+  }
+
+  this.value = result;
+});
+</script>
+
+</body>
+</html>

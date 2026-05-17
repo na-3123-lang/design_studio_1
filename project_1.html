@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SPAZIO 21.RETAIL</title>
+
+  <style>
+    @font-face {
+      font-family: 'TTSupermolotExpBold';
+      src: url('fonts/TTSupermolot-ExpBold.woff2') format('woff2');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'TTSupermolotCondRegular';
+      src: url('fonts/TTSupermolot-CondRegular.woff2') format('woff2');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'TTSupermolotExpMad';
+      src: url('fonts/TTSupermolot-ExpMad.woff2') format('woff2');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'TTSupermolotNeueExpLight';
+      src: url('fonts/TTSupermolotNeue-ExpLight.woff2') format('woff2');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --container-max: 900px;
+      --container-x: 90px;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 80px;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+      background: #f2f2f2;
+      color: #111;
+    }
+
+    p,
+    a,
+    input,
+    button,
+    div {
+      font-family: 'TTSupermolotCondRegular', Arial, sans-serif;
+    }
+
+    .project-title,
+    .header-inner .logo {
+      font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+      font-weight: 800;
+      font-style: normal;
+    }
+
+    .contact-inner {
+      font-family: 'TTSupermolotExpMad', Arial, sans-serif;
+      font-weight: 500;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #f2f2f2;
+    }
+
+    .header-inner {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-3);
+      box-sizing: border-box;
+      background: white;
+      border-bottom: 2px solid #2f6fe4;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+
+    .header-left a {
+      margin-right: 20px;
+    }
+
+    .header-right a {
+      margin-left: 20px;
+    }
+
+    .logo {
+      font-family: 'TTSupermolotExpBold', Arial, sans-serif;
+      font-weight: 800;
+      font-style: normal;
+      letter-spacing: 0;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: var(--space-3) 0 var(--space-7);
+      box-sizing: border-box;
+      background: white;
+      overflow: hidden;
+    }
+
+    /* TITLE */
+    .project-title {
+      width: 100%;
+      margin: var(--space-6) 0 var(--space-7);
+      padding: 0 20px;
+      font-size: 130px;
+      line-height: 0.85;
+      letter-spacing: -7px;
+      box-sizing: border-box;
+    }
+
+    .project-title span {
+      display: block;
+    }
+
+    .project-title span:last-child {
+      text-align: right;
+      padding-right: 5px;
+      box-sizing: border-box;
+    }
+
+    /* GALLERY */
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .row {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 15px;
+    }
+
+    .one {
+      grid-template-columns: 1fr;
+    }
+
+    .one img {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .two {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .two img {
+      height: auto;
+      object-fit: contain;
+    }
+
+    .three {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .three img {
+      height: 450px;
+      object-fit: cover;
+    }
+
+    .mix {
+      grid-template-columns: 2fr 1fr;
+    }
+
+    .mix img {
+      height: 420px;
+      object-fit: cover;
+    }
+
+    /* CONTACT */
+    .contact {
+      max-width: 900px;
+      margin: 0 auto;
+      background: #1478f2;
+      color: white;
+      box-sizing: border-box;
+    }
+
+    .contact-inner {
+      padding: 80px 90px;
+      font-size: 60px;
+      line-height: 1.2;
+      box-sizing: border-box;
+    }
+
+    /* ADAPTIVE */
+    @media (max-width: 900px) {
+      .header-inner {
+        max-width: 100%;
+        gap: 10px;
+      }
+
+      .container {
+        padding: 20px 0 60px;
+      }
+
+      .project-title {
+        padding: 0 20px;
+        font-size: 56px;
+        line-height: 0.9;
+        letter-spacing: -3px;
+      }
+
+      .two,
+      .three,
+      .mix {
+        grid-template-columns: 1fr;
+      }
+
+      .three img,
+      .mix img {
+        height: auto;
+      }
+
+      .contact {
+        max-width: 100%;
+      }
+
+      .contact-inner {
+        padding: 80px 20px;
+        font-size: 38px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="header-inner">
+
+    <div class="header-left">
+      <a href="portfolio.html">Проекты</a>
+      <a href="service.html">Услуги</a>
+    </div>
+
+    <div>
+      <a href="main.html" class="logo">NARO.DESIGN</a>
+    </div>
+
+    <div class="header-right">
+      <a href="main.html#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- WHITE BLOCK -->
+<div class="container">
+
+  <h1 class="project-title">
+    <span>SPAZIO 21.</span>
+    <span>RETAIL</span>
+  </h1>
+
+  <div class="row two">
+    <img src="images/11.jpg" alt="">
+    <img src="images/12.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/13.jpg" alt="">
+  </div>
+
+  <div class="row three">
+    <img src="images/14.jpg" alt="">
+    <img src="images/15.jpg" alt="">
+    <img src="images/16.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/17.jpg" alt="">
+  </div>
+
+  <div class="row mix">
+    <img src="images/18.jpg" alt="">
+    <img src="images/19.jpg" alt="">
+  </div>
+
+  <div class="row three">
+    <img src="images/20.jpg" alt="">
+    <img src="images/21.jpg" alt="">
+    <img src="images/22.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/23.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/24.jpg" alt="">
+  </div>
+
+  <div class="row two">
+    <img src="images/25.jpg" alt="">
+    <img src="images/26.jpg" alt="">
+  </div>
+
+  <div class="row one">
+    <img src="images/27.jpg" alt="">
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+<div class="contact" id="contacts">
+  <div class="contact-inner">
+    TELEGRAM<br>
+    WHATSAPP<br>
+    +7 (900) 000-00-00
+  </div>
+</div>
+
+</body>
+</html>
